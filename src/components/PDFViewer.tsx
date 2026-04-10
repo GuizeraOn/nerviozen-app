@@ -9,7 +9,7 @@ interface PDFViewerProps {
 }
 
 export function PDFViewer({ driveUrl, title = 'Documento' }: PDFViewerProps) {
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(true);
   const [loadState, setLoadState] = useState<'loading' | 'loaded' | 'error'>('loading');
 
   // Handle ESC key to exit fullscreen and scroll locking
