@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida a NervioZen</title>
+    <!-- Font Inter from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-navy: #0F172A;
+            --emerald: #10B981;
+            --emerald-hover: #059669;
+            --cyan: #0EA5E9;
+            --bg-color: #F8FAFC;
+            --text-color: #334155;
+            --line-color: #E2E8F0;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white; /* Cor branca para o papel A4 */
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color: var(--text-color);
+        }
+
+        /* Container padrão tamanho A4 */
+        .a4-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(135deg, white 60%, rgba(14, 165, 233, 0.03) 100%);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Para visualização na web, oculto na impressão */
+        }
+
+        @media print {
+            .a4-container {
+                box-shadow: none;
+                width: 100%;
+                height: 100vh;
+            }
+        }
+
+        /* Top Header Decorator */
+        .top-decorator {
+            height: 12px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--emerald), var(--cyan));
+        }
+
+        /* Header (Logo + Title) */
+        .header {
+            text-align: center;
+            padding: 50px 40px 30px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .header-logo svg {
+            width: 50px;
+            height: 50px;
+            color: var(--emerald);
+            margin-right: 15px;
+        }
+
+        .header-logo-text {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--slate-navy);
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            color: var(--slate-navy);
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .welcome-msg {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #475569;
+            max-width: 85%;
+            margin: 0 auto;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        /* Body Section */
+        .content {
+            flex: 1;
+            padding: 30px 60px;
+        }
+
+        /* Steps Section */
+        .steps-container {
+            background-color: var(--bg-color);
+            border: 1px solid var(--line-color);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .steps-title {
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--emerald);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--emerald), #059669);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 20px;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .step-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--slate-navy);
+            padding-top: 6px;
+        }
+
+        .step-text strong {
+            color: var(--slate-navy);
+        }
+
+        /* Call To Action */
+        .cta-container {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(to right, var(--emerald), #059669);
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5), 0 8px 10px -6px rgba(16, 185, 129, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Footer & QR */
+        .footer {
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-top: 1px solid var(--line-color);
+            background-color: white;
+            margin-top: auto;
+        }
+
+        .support-box {
+            display: flex;
+            align-items: center;
+            max-width: 65%;
+        }
+
+        .support-icon {
+            width: 44px;
+            height: 44px;
+            background-color: #25D366; /* Cor WhatsApp */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .support-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .support-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+
+        .qr-section {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            border: 1px solid var(--line-color);
+            padding: 5px;
+            border-radius: 8px;
+            background-color: white;
+            margin-bottom: 8px;
+        }
+
+        .qr-text {
+            font-size: 11px;
+            color: var(--text-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-container">
+        <!-- Decorator -->
+        <div class="top-decorator"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+                <span class="header-logo-text">NervioZen</span>
+            </div>
+            <h1>¡Tu camino hacia el alivio<br>comienza aquí!</h1>
+            <p class="welcome-msg">Hola, nos alegra que hayas tomado la decisión de recuperar tu libertad de movimiento. Tu acceso al Protocolo NervioZen ya está activo y esperándote.</p>
+        </header>
+
+        <!-- Body -->
+        <main class="content">
+            <div class="steps-container">
+                <div class="steps-title">Pasos de Acceso</div>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Haz clic en el botón verde de abajo para abrir la plataforma oficial.</div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Ingresa con el <strong>correo electrónico</strong> que usaste para realizar la compra.</div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Una vez dentro, sigue las instrucciones para instalar la aplicación en tu pantalla de inicio y realizar tu primer ritual de 11 segundos.</div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-container">
+                <a href="https://nerviozen-app.vercel.app" class="btn-cta">ACCEDER A MI PROTOCOLO AHORA</a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="support-box">
+                <div class="support-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                    </svg>
+                </div>
+                <div class="support-text">
+                    Si tienes alguna duda, nuestro equipo de soporte está listo para ayudarte vía WhatsApp.
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <!-- Generador de QR dinâmico usando o link do app -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nerviozen-app.vercel.app&color=0F172A&bgcolor=FFFFFF" alt="QR Code PWA" class="qr-code">
+                <span class="qr-text">Escanea para abrir</span>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
