@@ -9,7 +9,7 @@ interface PDFViewerProps {
 }
 
 export function PDFViewer({ driveUrl, title = 'Documento' }: PDFViewerProps) {
-  const [isFullscreen, setIsFullscreen] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
