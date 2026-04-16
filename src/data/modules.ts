@@ -1,6 +1,53 @@
-import { Coffee, ShieldCheck, Flame, Sparkles, Sunrise, Crosshair, Waves, Activity, Moon, LifeBuoy, Brain, Eye, Filter, ShieldAlert, Shield, BookOpen } from 'lucide-react';
+import { Coffee, ShieldCheck, Flame, Sparkles, Sunrise, Crosshair, Waves, Activity, Moon, LifeBuoy, Brain, Eye, Filter, ShieldAlert, Shield, BookOpen, AlertTriangle } from 'lucide-react';
 
 export const groupedModules = [
+  {
+    id: 'modulo-principal',
+    title: 'PROGRAMA PRINCIPAL: NervioZen',
+    focus: 'Foco: Protocolos Fundamentales',
+    items: [
+      {
+        id: 'mod-1',
+        title: 'El Ritual de 11 Segundos',
+        description: 'El núcleo del programa. Aprende la técnica exacta para estimular la regeneración nerviosa diariamente.',
+        icon: BookOpen,
+        iconColor: 'text-primary',
+        driveUrl: '/pdfs/El-Protocolo-de-Regeneracion-Nerviosa.pdf',
+        metadata: { duration: '15 min de lectura', format: 'Guía Práctica (PDF)', level: 'Esencial' },
+        benefits: ['Técnica de respiración celular', 'Activación del nervio vago', 'Reducción inmediata del dolor punzante']
+      },
+      {
+        id: 'mod-2',
+        title: 'Guía de Alimentos Prohibidos',
+        description: 'Descubre qué alimentos están saboteando tu recuperación y causando inflamación en tus nervios.',
+        icon: AlertTriangle,
+        iconColor: 'text-destructive',
+        driveUrl: '/pdfs/Guia-Alimentaria-para-Pacientes-con-Neuropatia-Recupera-la-Salud-de-tus-Nervios.pdf',
+        metadata: { duration: '10 min de lectura', format: 'Lista de Referencia (PDF)', level: 'Importante' },
+        benefits: ['Identificación de neurotoxinas ocultas', 'Sustitutos saludables y deliciosos', 'Plan de desintoxicación de 3 días']
+      },
+      {
+        id: 'mod-3',
+        title: 'El Protocolo del Sueño Delta',
+        description: 'Optimiza tu descanso para que tu cuerpo repare el daño nervioso mientras duermes.',
+        icon: Moon,
+        iconColor: 'text-indigo-500',
+        driveUrl: '/pdfs/Recupera-Tu-Descanso-Optimizacion-del-Sueno-para-Vivir-sin-Dolor-Cronico.pdf',
+        metadata: { duration: '20 min de lectura', format: 'Protocolo Nocturno (PDF)', level: 'Avanzado' },
+        benefits: ['Inducción de ondas Delta profundas', 'Reparación de mielina durante el sueño', 'Despertar sin entumecimiento']
+      },
+      {
+        id: 'mod-4',
+        title: 'Lista Negra de Neurotóxicos',
+        description: 'Identifica y elimina las toxinas ambientales y productos de uso diario que dañan tu sistema nervioso.',
+        icon: ShieldAlert,
+        iconColor: 'text-slate-500',
+        driveUrl: '/pdfs/Tu-Hogar-Tu-Santuario-Desintoxica-Tu-Entorno-para-una-Salud-Nerviosa-Optima.pdf',
+        metadata: { duration: '12 min de lectura', format: 'Auditoría del Hogar (PDF)', level: 'Prevención' },
+        benefits: ['Limpieza de productos de higiene', 'Peligros en utensilios de cocina', 'Creación de un santuario de sanación']
+      },
+    ]
+  },
   {
     id: 'modulo-1',
     title: 'MÓDULO 1: La Farmacia en tu Cocina',
@@ -8,7 +55,7 @@ export const groupedModules = [
     items: [
       {
         id: 'ebook-1',
-        title: 'eBook 1: Elixires de Mielina',
+        title: 'Elixires de Mielina',
         description: '7 Batidos Matutinos para Regenerar tus Nervios',
         icon: Coffee,
         iconColor: 'text-amber-500',
@@ -18,7 +65,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-2',
-        title: 'eBook 2: El Escudo Anti-Azúcar',
+        title: 'El Escudo Anti-Azúcar',
         description: 'Cómo Detener el Daño Nervioso sin Dejar de Comer Rico',
         icon: ShieldCheck,
         iconColor: 'text-emerald-500',
@@ -28,7 +75,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-3',
-        title: 'eBook 3: Cenas Apaga-Fuego',
+        title: 'Cenas Apaga-Fuego',
         description: 'Recetas Nocturnas para Dormir sin Ardor en los Pies',
         icon: Flame,
         iconColor: 'text-orange-500',
@@ -38,7 +85,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-4',
-        title: 'eBook 4: El Botiquín de Especias',
+        title: 'El Botiquín de Especias',
         description: 'Los 5 Polvos Mágicos que Calman el Dolor Nervioso',
         icon: Sparkles,
         iconColor: 'text-amber-400',
@@ -55,7 +102,7 @@ export const groupedModules = [
     items: [
       {
         id: 'ebook-5',
-        title: 'eBook 5: El Despertar Sin Dolor',
+        title: 'El Despertar Sin Dolor',
         description: 'Rutina de 3 Minutos en la Cama para Pies y Manos',
         icon: Sunrise,
         iconColor: 'text-rose-500',
@@ -65,7 +112,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-6',
-        title: 'eBook 6: El Botón de Apagado',
+        title: 'El Botón de Apagado',
         description: 'Puntos de Presión en Casa para Aliviar el Hormigueo',
         icon: Crosshair,
         iconColor: 'text-red-500',
@@ -75,7 +122,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-7',
-        title: 'eBook 7: El Milagro Termal',
+        title: 'El Milagro Termal',
         description: 'Cómo Usar el Agua en Casa para Revivir tus Nervios',
         icon: Waves,
         iconColor: 'text-cyan-500',
@@ -85,7 +132,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-8',
-        title: 'eBook 8: Movimiento Cero Impacto',
+        title: 'Movimiento Cero Impacto',
         description: 'Yoga en Silla para Liberar la Columna y las Piernas',
         icon: Activity,
         iconColor: 'text-teal-500',
@@ -102,7 +149,7 @@ export const groupedModules = [
     items: [
       {
         id: 'ebook-9',
-        title: 'eBook 9: Noches de Seda',
+        title: 'Noches de Seda',
         description: 'El Protocolo para Vencer el Insomnio por Dolor Nervioso',
         icon: Moon,
         iconColor: 'text-indigo-500',
@@ -112,7 +159,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-10',
-        title: 'eBook 10: Protocolo SOS',
+        title: 'Protocolo SOS',
         description: 'Qué hacer en los 5 minutos de peor dolor o punzadas',
         icon: LifeBuoy,
         iconColor: 'text-red-600',
@@ -122,7 +169,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-11',
-        title: 'eBook 11: El Peso del Dolor',
+        title: 'El Peso del Dolor',
         description: 'Cómo Liberar la Frustración y Acelerar tu Sanación',
         icon: Brain,
         iconColor: 'text-purple-500',
@@ -132,7 +179,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-12',
-        title: 'eBook 12: La Mente que Sana',
+        title: 'La Mente que Sana',
         description: 'Guía Práctica de Visualización para Regenerar la Mielina',
         icon: Eye,
         iconColor: 'text-blue-500',
@@ -149,7 +196,7 @@ export const groupedModules = [
     items: [
       {
         id: 'ebook-13',
-        title: 'eBook 13: El Filtro de Oro',
+        title: 'El Filtro de Oro',
         description: 'Cómo Limpiar tu Hígado de Años de Pastillas Químicas',
         icon: Filter,
         iconColor: 'text-yellow-600',
@@ -159,7 +206,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-14',
-        title: 'eBook 14: Enemigos Invisibles',
+        title: 'Enemigos Invisibles',
         description: 'Los 10 Tóxicos en tu Casa que Destruyen tus Nervios',
         icon: ShieldAlert,
         iconColor: 'text-orange-600',
@@ -169,7 +216,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-15',
-        title: 'eBook 15: El Escudo Inmune 50+',
+        title: 'El Escudo Inmune 50+',
         description: 'Cómo Blindar tu Cuerpo para que los Nervios Sanen en Paz',
         icon: Shield,
         iconColor: 'text-green-500',
@@ -179,7 +226,7 @@ export const groupedModules = [
       },
       {
         id: 'ebook-16',
-        title: 'eBook 16: El Diccionario del Nervio Sano',
+        title: 'El Diccionario del Nervio Sano',
         description: 'Qué Vitaminas Tomar y Dónde Encontrarlas en la Comida',
         icon: BookOpen,
         iconColor: 'text-emerald-600',
